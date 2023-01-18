@@ -4,8 +4,20 @@
 // getAllWithdrawals(bankAccounts) => [3432, 43242.34, 23432]
 
 export function getAllWithdrawals(array) {
-  // Your code goes here...
-
+    let withdrawals = []
+    let sum = 0
+    for (let i = 0; i < array.length; i++) {
+        if (array[i].withdrawals === undefined) {
+            withdrawals.push(0)
+        } else {
+            for (let j = 0; j < array[i].withdrawals.length; j++) {
+                sum += array[i].withdrawals[j]
+            }
+            withdrawals.push(sum)
+            sum = 0
+        }      
+    }
+    return withdrawals
 }
 
 // === TEST YOURSELF ===

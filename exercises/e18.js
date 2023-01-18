@@ -6,8 +6,16 @@
 // NOTE: You can NOT use the array.join(), array.toString(), and array.replace() methods in your code
 
 export function joinToString(array, separator) {
-  // Your code goes here...
-
+    let str = array[0]
+    const lastIndex = array.length - 1
+    for (let i = 1; i < array.length; i++) {
+        if (i === lastIndex) {
+            str += array[i]
+        } else {
+            str += array[i] + `${separator} `
+        }    
+    }
+    return str
 }
 
 
